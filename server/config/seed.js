@@ -8,6 +8,7 @@
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
 
+/*
 Thing.find({}).remove(function() {
   Thing.create({
     name : 'Development Tools',
@@ -46,4 +47,7 @@ User.find({}).remove(function() {
       console.log('finished populating users');
     }
   );
+
 });
+
+*/

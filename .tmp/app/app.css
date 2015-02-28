@@ -7724,6 +7724,9 @@ fieldset[disabled] .btn-github.active {
   margin-top: 70px;
   border-top: 1px solid #E5E5E5;
 }
+.angular-google-map-container {
+  height: 400px;
+}
 .modal-primary .modal-header,
 .modal-info .modal-header,
 .modal-success .modal-header,

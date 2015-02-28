@@ -6,14 +6,23 @@ angular.module('cowashingApp', [
   'ngSanitize',
   'btford.socket-io',
   'ui.router',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'uiGmapgoogle-maps',
+  'rt.popup',
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, uiGmapGoogleMapApiProvider) {
     $urlRouterProvider
       .otherwise('/');
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
+    
+    uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyCQ-TcPS9qXv_L2rTlXsQaSxR0f02emxKs',
+        v: '3.17',
+        libraries: 'weather,geometry,visualization'
+    });
+
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {

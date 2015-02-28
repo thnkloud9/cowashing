@@ -10,6 +10,8 @@
 'use strict';
 
 var _ = require('lodash');
+var gm = require('googlemaps');
+var util = require('util');
 var Thing = require('./thing.model');
 
 // Get list of things
@@ -31,9 +33,31 @@ exports.show = function(req, res) {
 
 // Creates a new thing in the DB.
 exports.create = function(req, res) {
-  Thing.create(req.body, function(err, thing) {
+  var thing = req.body;
+  var address = thing.address_1 + ', ' +
+    thing.address_2 + ', ' +
+    thing.city + ', ' +
+    thing.postal_code + ', ' +
+    thing.country;
+
+  // geocode address first
+  gm.geocode(address, function(err, data) {
     if(err) { return handleError(res, err); }
-    return res.json(201, thing);
+    var results = data.results[0];
+
+    thing.lat = results.geometry.location.lat; 
+    thing.lng = results.geometry.location.lng; 
+    thing.geometry = JSON.stringify(results.geometry);
+
+    Thing.create(thing, function(err, newThing) {
+      if(err) {
+        console.log(err);
+        return handleError(res, err); 
+      }
+
+      return res.json(201, newThing);
+    });
+    
   });
 };
 
