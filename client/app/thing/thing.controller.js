@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cowashingApp')
-  .controller('ThingCtrl', function ($scope, $q, $http, $modalInstance, thing, toaster, socket, Auth, User) {
+  .controller('ThingCtrl', function ($scope, $compile, $q, $http, $modalInstance, thing, toaster, socket, Auth, User) {
     $scope.thing = thing;
     $scope.events = [];
     $scope.hstep = 1;
@@ -14,7 +14,9 @@ angular.module('cowashingApp')
       angular.forEach($scope.thing.booking_requests, function (booking) {
         $scope.events.push({
           start: booking.date,
-          title: 'b'
+          allDay: true,
+          color: 'red',
+          rendering: 'background'
         });
       });
     }
@@ -56,9 +58,27 @@ angular.module('cowashingApp')
         toaster.pop('success', 'Sent', 'Your request has been sent');
         $scope.events.push({
           start: $scope.request.date,
-          title: 'b'
+          allDay: true,
+          rendering: 'background'
         });
       });
+    };
+
+    $scope.eventRender = function( event, element, view ) {
+      var left = parseInt(element.css('left'));
+      var top = parseInt(element.css('top'));
+      var width = parseInt(element.css('width'));
+      var height = parseInt(element.css('height'));
+      element.attr({
+        'tooltip': event.title,
+        'tooltip-append-to-body': true
+      });
+      element.css('opacity', '0.2');
+      element.css('left', left - 3);
+      element.css('width', width + 5);
+      element.css('top', top - 22);
+      element.css('height', 44);
+      $compile(element)($scope);
     };
 
     // calendar config
@@ -73,7 +93,8 @@ angular.module('cowashingApp')
         },
         dayClick: $scope.setDate,
         eventDrop: $scope.alertOnDrop,
-        eventResize: $scope.alertOnResize
+        eventResize: $scope.alertOnResize,
+        eventRender: $scope.eventRender
       }
     };
 
