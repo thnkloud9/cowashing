@@ -8,12 +8,28 @@ angular.module('cowashingApp')
     $scope.mstep = 1;
     $scope.request = {};
     $scope.validRequestDate = false;
+    $scope.newThing = {};
 
-    
-    $scope.test = function() {
-      console.log('bookings', $scope.thing.booking_requests);
+    if ($scope.thing.booking_requests) {
+      angular.forEach($scope.thing.booking_requests, function (booking) {
+        $scope.events.push({
+          start: booking.date,
+          title: 'b'
+        });
+      });
+    }
+
+    $scope.addThing = function () {
+      if($scope.newThing === '') {
+        return;
+      }
+      $scope.newThing.booking_requests = [];
+      $http.post('/api/things', $scope.newThing).then(function (response) {
+        toaster.pop('success', 'Machine Added', 'Your new machine has been added'); 
+        $scope.newThing = '';
+      });
     };
- 
+
     $scope.setDate = function(date) {
       $scope.request = {
         user: Auth.getCurrentUser()._id,
@@ -26,7 +42,6 @@ angular.module('cowashingApp')
     $scope.sendRequest = function() {
       var thing = $scope.thing;
 
-       
       thing.booking_requests.push($scope.request);
       $http.put('/api/things/'+ thing._id, thing).then(function (response) {
         $scope.thing = response.data;

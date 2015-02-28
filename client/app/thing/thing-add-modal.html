@@ -1,0 +1,70 @@
+<div class="add-machine-modal">
+  <form class="thing-form">
+    <label>Add a new machine</label>
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="new thing name"
+        ng-model="newThing.name">
+    </div>
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="address 1"
+        ng-model="newThing.address_1">
+    </div>
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="address 2"
+        ng-model="newThing.address_2">
+    </div>
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="city"
+        ng-model="newThing.city">
+    </div>
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="country"
+        ng-model="newThing.country">
+    </div>
+    <div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="postal_code"
+        ng-model="newThing.postal_code">
+    </div>
+
+    <div class="input-group">
+      <label for="volume">Volume</label>
+      <input 
+        type="range"
+        class="form-control input-sm" 
+        id="volume"
+        min=1
+        max=20
+        step=1
+        ng-model='newThing.volume'>
+    </div>
+
+    <div class="input-group">
+        <button 
+          type="submit" 
+          class="btn btn-xsm btn-primary" 
+          ng-click="addThing(); $close()">Add Machine</button>
+        <button 
+          class="btn btn-xsm btn-danger" 
+          ng-click="$close()">Cancel</button>
+    </div>
+  </form>
+</div>
+

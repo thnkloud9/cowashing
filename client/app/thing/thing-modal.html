@@ -17,17 +17,13 @@
         class="form-group">
         <span>Send booking for {{ request.date | date:'yyyy-MM-dd'}}?</span>
         <input 
-          ng-click="sendRequest()"
+          ng-click="sendRequest(); $close()"
           type="submit"
           class="btn btn-xsm btn-success" 
           id="submit">
       </div>
 
       <div class="form-group">
-        <button
-          ng-click="test()"
-          class="btn btn-xsm btn-info" 
-          id="cancel">Test</button>
         <button
           ng-click="$close()"
           class="btn btn-xsm btn-danger" 

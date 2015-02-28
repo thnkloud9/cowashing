@@ -21,13 +21,24 @@
           events="marker.events" 
           idkey="marker.id">
         </ui-gmap-marker>
+    
+        <ui-gmap-map-control 
+          template="app/main/map-bottom-controls.html" 
+          position="bottom-center" 
+          controller="MainCtrl" 
+          index="-1"></ui-gmap-map-control>
+
+        <ui-gmap-map-control 
+          template="app/main/map-top-controls.html" 
+          position="top-center" 
+          controller="MainCtrl" 
+          index="-1"></ui-gmap-map-control>
       </ui-gmap-google-map>
     </div>
   </div>
 
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="page-header">Available Machines:</h1>
       <ul 
         class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" 
         ng-repeat="thing in things">
@@ -36,72 +47,6 @@
     </div>
   </div>
 
-  <form class="thing-form">
-    <label>Add a new machine</label>
-    <div class="input-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="new thing name"
-        ng-model="newThing.name">
-    </div>
-    <div class="input-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="address 1"
-        ng-model="newThing.address_1">
-    </div>
-    <div class="input-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="address 2"
-        ng-model="newThing.address_2">
-    </div>
-    <div class="input-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="city"
-        ng-model="newThing.city">
-    </div>
-    <div class="input-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="country"
-        ng-model="newThing.country">
-    </div>
-    <div class="input-group">
-      <input
-        type="text"
-        class="form-control"
-        placeholder="postal_code"
-        ng-model="newThing.postal_code">
-    </div>
-
-    <div class="input-group">
-      <label for="volume">Volume</label>
-      <input 
-        type="range"
-        class="form-control input-sm" 
-        id="volume"
-        min=1
-        max=20
-        step=1
-        ng-model='newThing.volume'>
-    </div>
-
-    <div class="input-group">
-      <span class="input-group-btn">
-        <button 
-          type="submit" 
-          class="btn btn-primary" 
-          ng-click="addThing()">Add New</button>
-      </span>
-    </div>
-  </form>
 </div>
 
 <footer class="footer">

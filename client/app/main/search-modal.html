@@ -1,0 +1,35 @@
+<div class="search-options-modal">
+  <h4>Search Options</h4>
+  <form>
+    <div class="input-group">
+      <label for="volume">Volume</label>
+      <input 
+        type="range"
+        class="form-control input-sm" 
+        id="volume"
+        min=1
+        max=20
+        step=1
+        ng-model='search.volume'>
+    </div>
+
+    <div class="input-group">
+      <label for="efficiency">Energy Efficiency</label>
+      <input 
+        type="range"
+        class="form-control input-sm" 
+        id="efficiency"
+        min=1
+        max=20
+        step=1
+        ng-model='search.efficiency'>
+    </div>
+    
+    <button
+      class="btn btn-xsm btn-success"
+      ng-click="updateSearch(); $close()">Update Search</button>
+    <button
+      class="btn btn-xsm btn-danger"
+      ng-click="$close()">Cancel</button>
+  </form>
+</div>

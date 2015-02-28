@@ -14,15 +14,6 @@ angular.module('cowashingApp')
       });
     });
 
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $scope.newThing.booking_requests = [];
-      $http.post('/api/things', $scope.newThing);
-      $scope.newThing = '';
-    };
-
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
     };
@@ -30,6 +21,32 @@ angular.module('cowashingApp')
     $scope.$on('$destroy', function () {
       socket.unsyncUpdates('thing');
     });
+
+    $scope.updateSearch = function () {
+console.log('updating search');
+    };
+
+    $scope.showSearch = function () {
+      var modalInstance = $modal.open({
+        templateUrl: 'app/main/search-modal.html',
+        controller: 'MainCtrl',
+        size: 'small',
+        resolve: {}
+      });
+    };
+
+    $scope.showMachineAdd = function () {
+      var modalInstance = $modal.open({
+        templateUrl: 'app/thing/thing-add-modal.html',
+        controller: 'ThingCtrl',
+        size: 'small',
+        resolve: {
+          thing: function () {
+            return {};
+          }
+        }
+      });
+    };
 
     $scope.showMachineDetails = function (thing) {
       var modalInstance = $modal.open({
