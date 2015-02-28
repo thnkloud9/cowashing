@@ -7677,7 +7677,7 @@ input#extra4:checked {
   padding: 0.2em 0;
 }
 .calendar-container {
-  width: 200px;
+  width: 250px;
   margin-bottom: 10px;
 }
 /* override calendar header size */

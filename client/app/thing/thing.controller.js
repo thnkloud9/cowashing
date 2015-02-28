@@ -69,15 +69,13 @@ angular.module('cowashingApp')
       var top = parseInt(element.css('top'));
       var width = parseInt(element.css('width'));
       var height = parseInt(element.css('height'));
-      element.attr({
-        'tooltip': event.title,
-        'tooltip-append-to-body': true
+      element.css({
+        'opacity': '0.2',
+        'left': left - 3,
+        'width': width + 5,
+        'top': top - 22,
+        'height': 44
       });
-      element.css('opacity', '0.2');
-      element.css('left', left - 3);
-      element.css('width', width + 5);
-      element.css('top', top - 22);
-      element.css('height', 44);
       $compile(element)($scope);
     };
 

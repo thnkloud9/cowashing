@@ -29,7 +29,8 @@ require('./config/socketio')(socketio);
 require('./config/express')(app);
 require('./routes')(app);
 
-var services = require('./services/index')();
+// relayr polling
+//var services = require('./services/index')();
 
 // Start server
 server.listen(config.port, config.ip, function () {
