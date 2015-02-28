@@ -4,6 +4,7 @@ angular.module('cowashingApp')
   .controller('MainCtrl', function ($scope, $http, $modal, socket, uiGmapGoogleMapApi) {
     $scope.things = [];
     $scope.markers = [];
+    $scope.map = {};
 
     $http.get('/api/things').success(function(things) {
       $scope.things = things;
@@ -16,6 +17,7 @@ angular.module('cowashingApp')
 
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
+      
     };
 
     $scope.$on('$destroy', function () {
@@ -45,6 +47,12 @@ console.log('updating search');
             return {};
           }
         }
+      });
+      modalInstance.result.then(function (newThing) {
+        $scope.newThing = newThing;
+        $scope.mapThing(newThing);
+      }, function () {
+        console.log('Modal dismissed at: ' + new Date());
       });
     };
 
@@ -80,7 +88,10 @@ console.log('updating search');
 
     // load map
     uiGmapGoogleMapApi.then(function(maps) {
-      $scope.options = {scrollwheel: false};
+      $scope.mapOptions = {
+        scrollwheel: false,
+        mapTypeControl: false
+      };
       $scope.map = { center: { latitude: 52.5036791, longitude: 13.3188364 }, zoom: 15 };
     });
 

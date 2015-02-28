@@ -11,9 +11,12 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+      <ui-gmap-google-map 
+        center='map.center' 
+        options='mapOptions'
+        zoom='map.zoom'>
         <!-- map markers -->
-        <ui-gmap-marker 
+        <ui-gmap-marker
           ng-repeat='marker in markers'
           coords="marker.coords" 
           options="marker.options" 
@@ -51,8 +54,6 @@
 
 <footer class="footer">
   <div class="container">
-      <p>Angular Fullstack v2.0.13 |
-        <a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
+      <p>Cowash</p>
   </div>
 </footer>

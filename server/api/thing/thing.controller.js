@@ -36,7 +36,6 @@ exports.show = function(req, res) {
 exports.create = function(req, res) {
   var thing = req.body;
   var address = thing.address_1 + ', ' +
-    thing.address_2 + ', ' +
     thing.city + ', ' +
     thing.postal_code + ', ' +
     thing.country;

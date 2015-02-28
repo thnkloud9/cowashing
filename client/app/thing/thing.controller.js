@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('cowashingApp')
-  .controller('ThingCtrl', function ($scope, $q, $http, thing, toaster, socket, Auth, User) {
+  .controller('ThingCtrl', function ($scope, $q, $http, $modalInstance, thing, toaster, socket, Auth, User) {
     $scope.thing = thing;
     $scope.events = [];
     $scope.hstep = 1;
@@ -26,8 +26,13 @@ angular.module('cowashingApp')
       $scope.newThing.booking_requests = [];
       $http.post('/api/things', $scope.newThing).then(function (response) {
         toaster.pop('success', 'Machine Added', 'Your new machine has been added'); 
-        $scope.newThing = '';
+        $scope.newThing = response.data;
+        $modalInstance.close($scope.newThing);
       });
+    };
+
+    $scope.cancel = function () {
+      $modalInstance.dismiss('cancel');
     };
 
     $scope.setDate = function(date) {
