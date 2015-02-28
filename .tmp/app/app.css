@@ -7560,6 +7560,14 @@ button.btn.btn-xsm.btn-primary {
   width: 64px;
   height: 64px;
 }
+button.btn.btn-xsm.btn-success {
+  background: url(/assets/images/yes.png);
+  background-size: 64px 64px;
+  background-repeat: no-repeat;
+  border: none;
+  width: 64px;
+  height: 64px;
+}
 button.btn.btn-xsm.btn-danger {
   background: url(/assets/images/no.png);
   background-size: 64px 64px;
@@ -7669,7 +7677,7 @@ input#extra4:checked {
   padding: 0.2em 0;
 }
 .calendar-container {
-  width: 200px;
+  width: 250px;
   margin-bottom: 10px;
 }
 /* override calendar header size */
