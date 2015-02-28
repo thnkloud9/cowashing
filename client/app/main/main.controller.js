@@ -93,6 +93,11 @@ console.log('updating search');
         mapTypeControl: false
       };
       $scope.map = { center: { latitude: 52.5036791, longitude: 13.3188364 }, zoom: 15 };
+      $scope.icon =
+        size:
+        width: 32
+        height: 32
+        url: '/assets/images/marker.png'
     });
 
   });
