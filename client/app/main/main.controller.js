@@ -18,6 +18,7 @@ angular.module('cowashingApp')
       if($scope.newThing === '') {
         return;
       }
+      $scope.newThing.booking_requests = [];
       $http.post('/api/things', $scope.newThing);
       $scope.newThing = '';
     };

@@ -1,11 +1,12 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
+<!--
 <header class="hero-unit" id="banner">
   <div class="container">
     <h1>CoWash</h1>
   </div>
 </header>
-
+-->
 
 <div class="container">
   <div class="row">
@@ -79,6 +80,19 @@
         placeholder="postal_code"
         ng-model="newThing.postal_code">
     </div>
+
+    <div class="input-group">
+      <label for="volume">Volume</label>
+      <input 
+        type="range"
+        class="form-control input-sm" 
+        id="volume"
+        min=1
+        max=20
+        step=1
+        ng-model='newThing.volume'>
+    </div>
+
     <div class="input-group">
       <span class="input-group-btn">
         <button 

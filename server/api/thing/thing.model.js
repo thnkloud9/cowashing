@@ -14,7 +14,16 @@ var ThingSchema = new Schema({
   postal_code: String,
   lat: Number,
   lng: Number,
-  geometry: String
+  geometry: String,
+  booking_requests: [bookingRequestSchema],
+  volume: Number,
+});
+
+var bookingRequestSchema = new mongoose.Schema({
+    user: String,
+    date: Date,
+    accepted: Boolean,
+    created: {type: Date, default: Date.now}
 });
 
 module.exports = mongoose.model('Thing', ThingSchema);

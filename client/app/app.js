@@ -9,6 +9,8 @@ angular.module('cowashingApp', [
   'ui.bootstrap',
   'uiGmapgoogle-maps',
   'rt.popup',
+  'ui.calendar',
+  'toaster'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, uiGmapGoogleMapApiProvider) {
     $urlRouterProvider

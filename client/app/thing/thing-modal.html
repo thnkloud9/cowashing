@@ -1,2 +1,39 @@
-<h4>{{ thing.name }}</h4>
-<p>schedule here</p>
+<div class="request-modal">
+  <h3>Request Booking for {{ thing.name }}</h3>
+
+  <div class='machine-controls'>
+    <form>
+
+      <div class="form-group">
+        <div class='calendar-container'>
+          <div 
+            ui-calendar="uiConfig.calendar"
+            ng-model="eventSources"></div>
+        </div>
+      </div>
+
+      <div 
+        ng-show="validRequestDate"
+        class="form-group">
+        <span>Send booking for {{ request.date | date:'yyyy-MM-dd'}}?</span>
+        <input 
+          ng-click="sendRequest()"
+          type="submit"
+          class="btn btn-xsm btn-success" 
+          id="submit">
+      </div>
+
+      <div class="form-group">
+        <button
+          ng-click="test()"
+          class="btn btn-xsm btn-info" 
+          id="cancel">Test</button>
+        <button
+          ng-click="$close()"
+          class="btn btn-xsm btn-danger" 
+          id="cancel">Cancel</button>
+      </div>
+
+    </form>
+  </div>
+</div>

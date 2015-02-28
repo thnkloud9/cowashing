@@ -7531,6 +7531,18 @@ button.close {
   color: #000;
   padding: 0.2em 0;
 }
+.calendar-container {
+  width: 200px;
+  margin-bottom: 10px;
+}
+/* override calendar header size */
+.fc-header-title h2 {
+  font-size: 20px;
+}
+.request-modal {
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .btn-facebook {
   color: #ffffff;
   background-color: #133783;

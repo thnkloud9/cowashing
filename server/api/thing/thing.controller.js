@@ -10,6 +10,7 @@
 'use strict';
 
 var _ = require('lodash');
+var mongoose = require('mongoose');
 var gm = require('googlemaps');
 var util = require('util');
 var Thing = require('./thing.model');
@@ -68,6 +69,21 @@ exports.update = function(req, res) {
     if (err) { return handleError(res, err); }
     if(!thing) { return res.send(404); }
     var updated = _.merge(thing, req.body);
+
+    var bookingRequests = [];
+    _.forEach(updated.booking_requests, function(booking) {
+        console.log(booking);
+        var newBooking = {
+          user: mongoose.Types.ObjectId(booking.user),
+          date: booking.date,
+          accepted: booking.accepted,
+          created: Date.now()
+        }
+        bookingRequests.push(newBooking);
+    });
+   
+    updated.booking_requests = bookingRequests;
+ 
     updated.save(function (err) {
       if (err) { return handleError(res, err); }
       return res.json(200, thing);
