@@ -84,8 +84,8 @@ console.log('updating search');
         events: {},
         icon: {
           scaledSize: { 
-            width: 32,
-            height: 32
+            width: 64,
+            height: 64
           },
           url: '/assets/images/marker.png'
         }
