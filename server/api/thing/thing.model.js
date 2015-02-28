@@ -17,6 +17,7 @@ var ThingSchema = new Schema({
   geometry: String,
   booking_requests: [bookingRequestSchema],
   volume: Number,
+  relayr_data: [],
 });
 
 var bookingRequestSchema = new mongoose.Schema({
