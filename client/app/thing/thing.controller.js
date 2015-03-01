@@ -16,8 +16,7 @@ angular.module('cowashingApp')
           start: booking.date,
           allDay: true,
           color: 'red',
-          rendering: 'background',
-          height: 0px
+          rendering: 'background'
         });
       });
     }
