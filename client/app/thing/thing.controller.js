@@ -44,11 +44,13 @@ angular.module('cowashingApp')
     $scope.setDate = function(date, event, view) {
       $('.fc-day').css({
         'background-color': 'white',
-        'opacity': '1'
+        'opacity': '1',
+        'color': 'black'
       });
       $(view.currentTarget).css({
         'background-color': 'green',
-        'opacity': '0.3'
+        'opacity': '0.3',
+        'color': 'white'
       });
       $scope.request = {
         user: Auth.getCurrentUser()._id,
