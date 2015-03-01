@@ -11,7 +11,11 @@ angular.module('cowashingApp')
 
     $http.get('/api/things').success(function(things) {
       $scope.things = things;
-      socket.syncUpdates('thing', $scope.things);
+      socket.syncUpdates('thing', $scope.things, function(event, item, array) {
+        if (event != 'deleted') {
+          $scope.mapThing(item); 
+        }
+      });
       // get map coordinates
       angular.forEach($scope.things, function (thing) {
         $scope.mapThing(thing); 
@@ -19,6 +23,7 @@ angular.module('cowashingApp')
     });
 
     $scope.deleteThing = function(thing) {
+      _.remove($scope.mapMarkers.results, {id: thing._id});
       $http.delete('/api/things/' + thing._id);
     };
 
