@@ -108,4 +108,5 @@ angular.module('cowashingApp')
     };
 
     $scope.eventSources = [$scope.events];
+
   });

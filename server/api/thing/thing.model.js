@@ -18,6 +18,10 @@ var ThingSchema = new Schema({
   booking_requests: [bookingRequestSchema],
   volume: Number,
   relayr_data: [],
+  dryer: Boolean,
+  detergent: Boolean,
+  iron: Boolean,
+  hanger: Boolean
 });
 
 var bookingRequestSchema = new mongoose.Schema({

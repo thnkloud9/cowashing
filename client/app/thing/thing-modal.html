@@ -3,18 +3,40 @@
 
     <div class="input-group">
       <div class="btn-group btn-group-justified" role="group">
-        <div class="btn-group" role="group"><button type="button" class="btn btn-default">A++</button></div>
-        <div class="btn-group" role="group"><button type="button" class="btn btn-default active">A+</button></div>
-        <div class="btn-group" role="group"><button type="button" class="btn btn-default">A</button></div>
-        <div class="btn-group" role="group"><button type="button" class="btn btn-default">B</button></div>
-        <div class="btn-group" role="group"><button type="button" class="btn btn-default">C</button></div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default">A++</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default active">A+</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default">A</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default">B</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default">C</button>
+        </div>
       </div>
     </div>
 
-    <div class="checkbox1 inline-block"><input type="checkbox" id="extra1" checked/><label for="extra1"> </label></div>
-    <div class="checkbox2 inline-block"><input type="checkbox" id="extra2" /><label for="extra2"> </label></div>
-    <div class="checkbox3 inline-block"><input type="checkbox" id="extra3" /><label for="extra3"> </label></div>
-    <div class="checkbox4 inline-block"><input type="checkbox" id="extra4" /><label for="extra4"> </label></div>
+    <div class="checkbox1 inline-block">
+      <input type="checkbox" id="extra1" ng-checked="thing.dryer" />
+      <label for="extra1"> </label>
+    </div>
+    <div class="checkbox2 inline-block">
+      <input type="checkbox" id="extra2" ng-checked="thing.detergent" />
+      <label for="extra2"> </label>
+    </div>
+    <div class="checkbox3 inline-block">
+      <input type="checkbox" id="extra3" ng-checked="thing.iron" />
+      <label for="extra3"> </label>
+    </div>
+    <div class="checkbox4 inline-block">
+      <input type="checkbox" id="extra4" ng-checked="thing.hanger" />
+      <label for="extra4"> </label>
+    </div>
 
   <div class='machine-controls'>
     <form>
