@@ -102,7 +102,7 @@ console.log('updating search');
             width: 64,
             height: 64
           },
-          url: '/assets/images/marker.png'
+          url: '/assets/images/marker64.png'
         }
       };
       $scope.mapMarkers.results.push(marker);
