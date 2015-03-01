@@ -7588,6 +7588,15 @@ button#message-btn {
   height: 128px;
   bottom: 2% !important;
 }
+.btn-default:active {
+  background-color: #05C4AA;
+}
+.btn-default.active {
+  background-color: #05C4AA;
+}
+.btn-default:focus {
+  background-color: #05C4AA;
+}
 button.btn.btn-xsm.btn-primary {
   background: url(/assets/images/yes.png);
   background-size: 64px 64px;
@@ -7646,6 +7655,7 @@ ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6.ng-scope {
   height: 10px;
 }
 input[type="checkbox"] {
+  display: none;
   visibility: hidden;
 }
 .checkbox1 input[type=checkbox] + label {
