@@ -72,9 +72,9 @@ angular.module('cowashingApp')
       var height = parseInt(element.css('height'));
       element.css({
         'opacity': '0.2',
-        'left': left - 3,
-        'width': width + 5,
-        'top': top - 22,
+        'left': left - 2,
+        'width': width + 3,
+        'top': top - 21,
         'height': 24
       });
       $compile(element)($scope);
