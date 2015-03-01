@@ -411,6 +411,7 @@ table.fc-border-separate {
 .fc-grid .fc-day-content {
 	clear: both;
 	padding: 2px 2px 1px; /* distance between events and day edges */
+	height: 0;
 	}
 	
 /* event styles */
