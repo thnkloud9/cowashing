@@ -7651,8 +7651,9 @@ input[type="checkbox"] {
 .checkbox1 input[type=checkbox] + label {
   background: url('/assets/images/dryer_off.png') 0 no-repeat;
   background-size: 64px 64px;
-  width: 64px;
+  width: 48px;
   height: 64px;
+  margin-left: -25px;
 }
 .checkbox1 input[type=checkbox]:checked + label {
   background: url('/assets/images/dryer_on.png') 0 no-repeat;
@@ -7661,7 +7662,7 @@ input[type="checkbox"] {
 .checkbox2 input[type=checkbox] + label {
   background: url('/assets/images/bottle_off.png') 0 no-repeat;
   background-size: 64px 64px;
-  width: 64px;
+  width: 50px;
   height: 64px;
 }
 .checkbox2 input[type=checkbox]:checked + label {
@@ -7671,7 +7672,7 @@ input[type="checkbox"] {
 .checkbox3 input[type=checkbox] + label {
   background: url('/assets/images/iron_off.png') 0 no-repeat;
   background-size: 64px 64px;
-  width: 64px;
+  width: 50px;
   height: 64px;
 }
 .checkbox3 input[type=checkbox]:checked + label {
