@@ -74,7 +74,7 @@ angular.module('cowashingApp')
         'left': left - 3,
         'width': width + 5,
         'top': top - 22,
-        'height': 44
+        'height': 24
       });
       $compile(element)($scope);
     };
