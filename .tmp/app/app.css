@@ -7526,7 +7526,7 @@ button.close {
  * App-wide Styles
  */
 .navbar {
-  /*	display: none;*/
+  display: none;
 }
 .container {
   width: 100%;
@@ -7555,19 +7555,32 @@ button.close {
 }
 button#machine-add-btn {
   background: url(/assets/images/add.png);
-  background-size: 64px 64px;
+  background-size: 128px 128px;
   background-repeat: no-repeat;
   border: none;
-  width: 64px;
-  height: 64px;
+  width: 128px;
+  height: 128px;
+  right: 2% !important;
+  bottom: 2% !important;
 }
 button#search-btn {
   background: url(/assets/images/filter.png);
-  background-size: 64px 64px;
+  background-size: 128px 128px;
   background-repeat: no-repeat;
   border: none;
-  width: 64px;
-  height: 64px;
+  width: 128px;
+  height: 128px;
+  left: 2% !important;
+  bottom: 2% !important;
+}
+button#message-btn {
+  background: url(/assets/images/message.png);
+  background-size: 128px 128px;
+  background-repeat: no-repeat;
+  border: none;
+  width: 128px;
+  height: 128px;
+  bottom: 2% !important;
 }
 button.btn.btn-xsm.btn-primary {
   background: url(/assets/images/yes.png);
@@ -7593,100 +7606,52 @@ button.btn.btn-xsm.btn-danger {
   width: 64px;
   height: 64px;
 }
-input[type=checkbox] + label {
-  background: url(http://lorempixel.com/output/people-q-c-50-50-1.jpg) no-repeat;
-  height: 50px;
-  width: 50px;
-  display: block;
-  border-radius: 50%;
-  position: relative;
-  transition: all 0.4s;
-  border: solid 5px #FFF;
-  box-shadow: 0 0 1px #FFF;
-  /* Soften the jagged edge */
+ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6.ng-scope {
+  height: 10px;
 }
-/* Provide a border when hovered and when the checkbox before it is checked */
-input[type=checkbox] + label:hover,
-input[type=checkbox]:checked + label {
-  border: solid 5px #F00;
-  box-shadow: 0 0 1px #F00;
-  /* Soften the jagged edge */
+input[type="checkbox"] {
+  visibility: hidden;
 }
-/* 
-- Create a pseudo element :after when checked and provide a tick
-- Center the content
-*/
-input[type=checkbox]:checked + label:after {
-  content: '\2714';
-  /*content is required, though it can be empty - content: '';*/
-  display: block;
-  height: 1em;
-  width: 1em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  color: #F00;
+.checkbox1 input[type=checkbox] + label {
+  background: url('/assets/images/dryer_off.png') 0 no-repeat;
+  background-size: 64px 64px;
+  width: 64px;
+  height: 64px;
 }
-/*
-input#extra1 {
-	background: url('/assets/images/dryer_off.png') 0 0px no-repeat;
-	width: 24px;
-	height: 24px;
-	padding: 0 0 0 0px;
+.checkbox1 input[type=checkbox]:checked + label {
+  background: url('/assets/images/dryer_on.png') 0 no-repeat;
+  background-size: 64px 64px;
 }
-
-input#extra1:checked {
-	background: url('/assets/images/dryer_on.png') 0 0px no-repeat;
-	width: 24px;
-	height: 24px;
-	padding: 0 0 0 0px;
+.checkbox2 input[type=checkbox] + label {
+  background: url('/assets/images/bottle_off.png') 0 no-repeat;
+  background-size: 64px 64px;
+  width: 64px;
+  height: 64px;
 }
-
-input#extra2 {
-	background: url('/assets/images/bottle_off.png') 0 0px no-repeat;
-	width: 24px;
-	height: 24px;
-	padding: 0 0 0 0px;
+.checkbox2 input[type=checkbox]:checked + label {
+  background: url('/assets/images/bottle_on.png') 0 no-repeat;
+  background-size: 64px 64px;
 }
-
-input#extra2:checked {
-	background: url('/assets/images/bottle_on.png') 0 0px no-repeat;
-	width: 24px;
-	height: 24px;
-	padding: 0 0 0 0px;
+.checkbox3 input[type=checkbox] + label {
+  background: url('/assets/images/iron_off.png') 0 no-repeat;
+  background-size: 64px 64px;
+  width: 64px;
+  height: 64px;
 }
-
-input#extra3 {
-	background: url('/assets/images/iron_off.png') 0 0px no-repeat;
-	width: 24px;
-	height: 24px;
-	padding: 0 0 0 0px;
+.checkbox3 input[type=checkbox]:checked + label {
+  background: url('/assets/images/iron_on.png') 0 0px no-repeat;
+  background-size: 64px 64px;
 }
-
-input#extra3:checked {
-	background: url('/assets/images/iron_on.png') 0 0px no-repeat;
-	width: 24px;
-	height: 24px;
-	padding: 0 0 0 0px;
+.checkbox4 input[type=checkbox] + label {
+  background: url('/assets/images/hanger_off.png') 0 0px no-repeat;
+  background-size: 64px 64px;
+  width: 64px;
+  height: 64px;
 }
-
-input#extra4 {
-	background: url('/assets/images/hanger_off.png') 0 0px no-repeat;
-	width: 24px;
-	height: 24px;
-	padding: 0 0 0 0px;
+.checkbox4 input[type=checkbox]:checked + label {
+  background: url('/assets/images/hanger_on.png') 0 0px no-repeat;
+  background-size: 64px 64px;
 }
-
-input#extra4:checked {
-	background: url('/assets/images/hanger_on.png') 0 0px no-repeat;
-	width: 24px;
-	height: 24px;
-	padding: 0 0 0 0px;
-}
-*/
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -7709,6 +7674,9 @@ input#extra4:checked {
 }
 .search-options-modal {
   padding: 10px;
+}
+.inline-block {
+  display: inline-block;
 }
 .btn-facebook {
   color: #ffffff;
