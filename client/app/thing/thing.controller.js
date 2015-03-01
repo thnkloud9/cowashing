@@ -32,6 +32,7 @@ angular.module('cowashingApp')
       $http.post('/api/things', $scope.newThing).then(function (response) {
         toaster.pop('success', 'Machine Added', 'Your new machine has been added'); 
         $scope.newThing = response.data;
+        socket.syncUpdates('thing', $scope.newThing);
         $modalInstance.close($scope.newThing);
       });
     };
