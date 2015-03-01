@@ -91,6 +91,7 @@ console.log('updating search');
         }
       };
       $scope.markers.push(marker);
+console.log($scope.map);
     };
 
     // load map
