@@ -16,7 +16,7 @@
         ng-show="validRequestDate"
         class="form-group">
         <span>Send booking for {{ request.date | date:'yyyy-MM-dd'}}?</span>
-        <input 
+        <button
           ng-click="sendRequest(); $close()"
           type="submit"
           class="btn btn-xsm btn-success">
