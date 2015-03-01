@@ -9,23 +9,21 @@
 -->
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12">
       <ui-gmap-google-map 
         center='map.center' 
         options='mapOptions'
+        events='map.events'
         zoom='map.zoom'>
+
         <!-- map markers -->
-        <ui-gmap-marker
-          icon="marker.icon"
-          ng-repeat='marker in markers'
-          coords="marker.coords" 
-          options="marker.options" 
-          click='marker.click'
-          events="marker.events" 
-          idkey="marker.id">
+        <ui-gmap-markers
+          models='mapMarkers.results'
+          coords="'coords'"
+          click="'click'"
+          icon="'icon'"
+          options="'options'">
         </ui-gmap-marker>
-    
+
         <ui-gmap-map-control 
           template="app/main/map-bottom-controls.html" 
           position="right-bottom" 
@@ -38,8 +36,6 @@
           controller="MainCtrl" 
           index="-1"></ui-gmap-map-control>
       </ui-gmap-google-map>
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-lg-12">
