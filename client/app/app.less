@@ -105,53 +105,63 @@ ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6.ng-scope {
 	height: 10px;
 }
 
-input[type=checkbox] + label {
-  background: url(http://lorempixel.com/output/people-q-c-50-50-1.jpg) no-repeat;
-  height: 50px;
-  width: 50px;
-  display: block;
-  border-radius: 50%;
-  position: relative;
-  transition: all 0.4s;
-  border: solid 5px #FFF;
-  box-shadow: 0 0 1px #FFF; /* Soften the jagged edge */
+input[type="checkbox"] {
+    display:none;
 }
 
-/* Provide a border when hovered and when the checkbox before it is checked */
-input[type=checkbox] + label:hover,
-input[type=checkbox]:checked + label {
-  border: solid 5px #F00;
-  box-shadow: 0 0 1px #F00; /* Soften the jagged edge */
+#extra1 input[type=checkbox] + label {
+	background: url('/assets/images/dryer_off.png') 0 0px no-repeat;
+    display:inline-block;
+    width:64px;
+    height:64px;
 }
 
-/* 
-- Create a pseudo element :after when checked and provide a tick
-- Center the content
-*/
-input[type=checkbox]:checked + label:after {
-  content: '\2714'; /*content is required, though it can be empty - content: '';*/
-  display: block;
-  height: 1em;
-  width: 1em;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  margin: auto;
-  color: #F00;
+#extra1 input[type=checkbox]:checked + label {
+	background: url('/assets/images/dryer_on.png') 0 0px no-repeat;
 }
+
+#extra2 input[type=checkbox] + label {
+	background: url('/assets/images/bottle_off.png') 0 0px no-repeat;
+    display:inline-block;
+    width:64px;
+    height:64px;
+}
+
+#extra2 input[type=checkbox]:checked + label {
+	background: url('/assets/images/bottle_on.png') 0 0px no-repeat;
+}
+
+#extra3 input[type=checkbox] + label {
+	background: url('/assets/images/iron_off.png') 0 0px no-repeat;
+    display:inline-block;
+    width:64px;
+    height:64px;
+}
+
+#extra3 input[type=checkbox]:checked + label {
+	background: url('/assets/images/iron_on.png') 0 0px no-repeat;
+}
+
+#extra4 input[type=checkbox] + label {
+	background: url('/assets/images/hanger_off.png') 0 0px no-repeat;
+    display:inline-block;
+    width:64px;
+    height:64px;
+}
+
+#extra4 input[type=checkbox]:checked + label {
+	background: url('/assets/images/hanger_on.png') 0 0px no-repeat;
+}
+
 
 /*
 input#extra1 {
-	background: url('/assets/images/dryer_off.png') 0 0px no-repeat;
 	width: 24px;
 	height: 24px;
 	padding: 0 0 0 0px;
 }
 
 input#extra1:checked {
-	background: url('/assets/images/dryer_on.png') 0 0px no-repeat;
 	width: 24px;
 	height: 24px;
 	padding: 0 0 0 0px;
