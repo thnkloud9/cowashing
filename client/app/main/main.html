@@ -9,41 +9,42 @@
 -->
 
 <div class="container">
-  <ui-gmap-google-map 
-    center='map.center' 
-    options='map.options'
-    events='map.events'
-    control='map.control'
-    zoom='map.zoom'>
+  <div id="map-canvas">
+    <ui-gmap-google-map 
+      center='map.center' 
+      options='map.options'
+      events='map.events'
+      control='map.control'
+      zoom='map.zoom'>
 
-    <!-- map markers -->
-    <ui-gmap-markers
-      models='mapMarkers.results'
-      coords="'coords'"
-      click="'click'"
-      icon="'icon'"
-      options="'options'">
-    </ui-gmap-marker>
+      <!-- map markers -->
+      <ui-gmap-markers
+        models='mapMarkers.results'
+        coords="'coords'"
+        click="'click'"
+        icon="'icon'"
+        options="'options'">
+      </ui-gmap-marker>
 
-    <ui-gmap-map-control
-      template="app/main/map-bottom-center-controls.html" 
-      position="bottom-center" 
-      controller="MainCtrl" 
-      index="-1"></ui-gmap-map-control>
+      <ui-gmap-map-control
+        template="app/main/map-bottom-center-controls.html" 
+        position="bottom-center" 
+        controller="MainCtrl" 
+        index="-1"></ui-gmap-map-control>
 
-    <ui-gmap-map-control 
-      template="app/main/map-bottom-controls.html" 
-      position="right-bottom" 
-      controller="MainCtrl" 
-      index="-1"></ui-gmap-map-control>
+      <ui-gmap-map-control 
+        template="app/main/map-bottom-controls.html" 
+        position="right-bottom" 
+        controller="MainCtrl" 
+        index="-1"></ui-gmap-map-control>
 
-    <ui-gmap-map-control 
-      template="app/main/map-top-controls.html" 
-      position="left-bottom" 
-      controller="MainCtrl" 
-      index="-1"></ui-gmap-map-control>
-  </ui-gmap-google-map>
-
+      <ui-gmap-map-control 
+        template="app/main/map-top-controls.html" 
+        position="left-bottom" 
+        controller="MainCtrl" 
+        index="-1"></ui-gmap-map-control>
+    </ui-gmap-google-map>
+  </div>
 <!--
   <div class="col-lg-12">
     <ul 
