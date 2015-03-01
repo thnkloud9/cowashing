@@ -7,6 +7,7 @@ angular.module('cowashingApp')
       results: []
     };
     $scope.map = {};
+    $scope.hasMessages = false;
 
     $http.get('/api/things').success(function(things) {
       $scope.things = things;
@@ -50,7 +51,7 @@ console.log('updating search');
         }
       });
       modalInstance.result.then(function (newThing) {
-        $scope.newThing = newThing;
+        $scope.things.push(newThing);
         $scope.mapThing(newThing);
       }, function () {
         console.log('Modal dismissed at: ' + new Date());
@@ -67,6 +68,14 @@ console.log('updating search');
             return thing;
           }
         }
+      });
+    };
+
+    $scope.showMessages = function () {
+      var modalInstance = $modal.open({
+        templateUrl: 'app/messages/messages-modal.html',
+        controller: 'MessagesCtrl',
+        size: 'small'
       });
     };
 
@@ -92,25 +101,37 @@ console.log('updating search');
         }
       };
       $scope.mapMarkers.results.push(marker);
+      if ($scope.map.control) {
+        //$scope.map.control.refresh();
+        //$scope.map.control.getGMap().setZoom(15);
+      }
     };
 
     // load map
     uiGmapGoogleMapApi.then(function(maps) {
       maps.visualRefresh = true;
-      $scope.mapOptions = {
-        scrollwheel: false,
-        mapTypeControl: false
-      };
-      angular.extend($scope, {
-        map: {
-          center: { 
+    });
+
+    angular.extend($scope, {
+      map: {
+        options: {
+          scrollwheel: false,
+          mapTypeControl: false
+        },
+        center: { 
+          latitude: 52.5036791, 
+          longitude: 13.3188364 
+        }, 
+        zoom: 15,
+        events: {},
+        control: {},
+        refresh: function () {
+          $scope.map.control.refresh({
             latitude: 52.5036791, 
             longitude: 13.3188364 
-          }, 
-          zoom: 15,
-          events: {}
+          });
         }
-      }); 
+      }
     });
 
   });
