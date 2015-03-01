@@ -26,8 +26,8 @@
           ng-click="sendRequest(); $close()"
           type="submit"
           class="btn btn-xsm btn-pay"> </button>
-        <span><br/>Request {{ request.date | date:'yyyy-MM-dd'}}?</span>
       </div>
+      <span ng-show="validRequestDate"><br />Request {{ request.date | date:'yyyy-MM-dd'}}?</span>
 
     </form>
   </div>
