@@ -7536,6 +7536,23 @@ button.close {
 .footer {
   /*	display: none;*/
 }
+.calendar-container {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.modal-dialog {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.input-group {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
 button#machine-add-btn {
   background: url(/assets/images/add.png);
   background-size: 64px 64px;
