@@ -7525,10 +7525,16 @@ button.close {
 /**
  * App-wide Styles
  */
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
 .navbar {
   display: none;
 }
 .container {
+  position: relative;
   width: 100%;
   height: 100%;
   padding: 0px;
@@ -7587,6 +7593,7 @@ button.btn.btn-xsm.btn-primary {
   background-size: 64px 64px;
   background-repeat: no-repeat;
   border: none;
+  padding: 0;
   width: 64px;
   height: 64px;
 }
@@ -7595,6 +7602,7 @@ button.btn.btn-xsm.btn-success {
   background-size: 64px 64px;
   background-repeat: no-repeat;
   border: none;
+  padding: 0;
   width: 64px;
   height: 64px;
 }
@@ -7603,6 +7611,7 @@ button.btn.btn-xsm.btn-pay {
   background-size: 64px 64px;
   background-repeat: no-repeat;
   border: none;
+  padding: 0;
   width: 64px;
   height: 64px;
 }
@@ -7611,6 +7620,25 @@ button.btn.btn-xsm.btn-danger {
   background-size: 64px 64px;
   background-repeat: no-repeat;
   border: none;
+  padding: 0;
+  width: 64px;
+  height: 64px;
+}
+button.btn.btn-xsm.btn-door {
+  background: url(/assets/images/door.png);
+  background-size: 64px 64px;
+  background-repeat: no-repeat;
+  border: none;
+  padding: 0;
+  width: 64px;
+  height: 64px;
+}
+button.btn.btn-xsm.btn-wash {
+  background: url(/assets/images/wash.png);
+  background-size: 64px 64px;
+  background-repeat: no-repeat;
+  border: none;
+  padding: 0;
   width: 64px;
   height: 64px;
 }
@@ -7880,7 +7908,18 @@ fieldset[disabled] .btn-github.active {
   border-top: 1px solid #E5E5E5;
 }
 .angular-google-map-container {
-  height: 400px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  /* fix this later */
+  height: 100vh;
+}
+#map-canvas {
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 .modal-primary .modal-header,
 .modal-info .modal-header,

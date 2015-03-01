@@ -106,10 +106,6 @@ console.log('updating search');
         }
       };
       $scope.mapMarkers.results.push(marker);
-      if ($scope.map.control) {
-        //$scope.map.control.refresh();
-        //$scope.map.control.getGMap().setZoom(15);
-      }
     };
 
     // load map
